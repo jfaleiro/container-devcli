@@ -4,6 +4,9 @@ on:
   release:
     types: [published]
 
+env:
+  DOCKERHUB_REPOSITORY: jfaleiro/devcli
+
 jobs:
   push_to_registry:
     name: Push container image to hub
@@ -22,7 +25,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: jfaleiro/devcli
+          images: ${{ env.DOCKERHUB_REPOSITORY }}
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
@@ -33,9 +36,11 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
-      - name: Update repo description
-        uses: peter-evans/dockerhub-description@v3
+      - name: Docker Hub Description
+        uses: peter-evans/dockerhub-description@v4
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-          repository: jfaleiro/devcli         
+          repository: ${{ env.DOCKERHUB_REPOSITORY }}
+          short-description: ${{ github.event.repository.description }}
+          enable-url-completion: true    
