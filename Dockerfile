@@ -9,7 +9,8 @@ RUN apt-get install --no-install-recommends -y \
     curl
 
 # see https://github.com/ohmyzsh/ohmyzsh/wiki
-RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 # Clean up
 RUN apt-get autoremove -y \
