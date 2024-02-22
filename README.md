@@ -1,2 +1,2 @@
-# container-common
-common container
+# container-devcli
+command line utilities
