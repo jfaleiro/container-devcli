@@ -1,2 +1,5 @@
 # container-devcli
-command line utilities
+
+Small image with basic command line utilities: `git`, `curl`, `make`, `zsh`.
+ 
+
