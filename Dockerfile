@@ -3,7 +3,7 @@ FROM jfaleiro/common:v0.1.4
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get clean \
     && apt-get update \
-    apt-get install --no-install-recommends -y \
+    && apt-get install --no-install-recommends -y \
         git \
         procps \
         zsh \
