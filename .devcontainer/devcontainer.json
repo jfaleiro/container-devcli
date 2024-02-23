@@ -10,5 +10,8 @@
 			]
 		}
 	},
+	"containerEnv": {
+		"SHELL": "/usr/bin/zsh"
+	},
 	"remoteUser": "root"
 }
