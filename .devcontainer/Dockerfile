@@ -2,11 +2,13 @@
 
 FROM jfaleiro/devcli:latest as base 
 
+# FIXME https://github.com/jfaleiro/container-devcli/issues/6 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get clean \
     && apt-get update \
     && apt-get -y install --no-install-recommends \
         graphviz \
+        openssh-client \
     && echo "cleaning up..." \
     && apt-get autoremove -y \
     && apt-get clean -y \
