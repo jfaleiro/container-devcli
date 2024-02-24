@@ -6,6 +6,7 @@ RUN apt-get clean \
     && apt-get install --no-install-recommends -y \
         zsh \
         gh \
+        openssh-client \
     && echo "cleaning up..." \
     && apt-get autoremove -y \
     && apt-get clean -y \
