@@ -1,14 +1,11 @@
-FROM jfaleiro/common:v0.1.4
+FROM jfaleiro/build:v0.1.1
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get clean \
     && apt-get update \
     && apt-get install --no-install-recommends -y \
-        git \
-        procps \
         zsh \
-        make \
-        curl \
+        gh \
     && echo "cleaning up..." \
     && apt-get autoremove -y \
     && apt-get clean -y \
