@@ -7,6 +7,7 @@ RUN apt-get clean \
         zsh \
         gh \
         openssh-client \
+        rename \
     && echo "cleaning up..." \
     && apt-get autoremove -y \
     && apt-get clean -y \

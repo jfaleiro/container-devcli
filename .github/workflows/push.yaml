@@ -1,7 +1,9 @@
 name: builds docker image
 
 on:
-  push
+  push:
+    branches:
+    - '**'
 
 jobs:
   build:
