@@ -1,11 +1,13 @@
 name: builds docker image
 
 on:
-  push
+  push:
+    branches:
+    - '**'
 
 jobs:
   build:
-    name: builds 
+    name: Builds Docker image
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
