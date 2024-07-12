@@ -1,4 +1,4 @@
-FROM jfaleiro/build:v0.1.1
+FROM jfaleiro/build:v0.1.3
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get clean \
@@ -7,7 +7,6 @@ RUN apt-get clean \
         zsh \
         gh \
         openssh-client \
-        rename \
     && echo "cleaning up..." \
     && apt-get autoremove -y \
     && apt-get clean -y \
